@@ -1,0 +1,207 @@
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.content{
+    width: 600px;
+    height: 400px;
+    background: #fafafa;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display:table;
+    position: relative;
+    border: 30px solid #f5f5f5;
+}
+
+.content h1{
+    font-size: 34pt;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    color: #5e5e5e;
+    margin: 0; 
+    display:table-cell;
+    vertical-align:middle;
+    padding:10px;
+}
+
+
+.navigation_btn, a:link, a:visited {
+    cursor: pointer;
+    border:none;
+    font-size: 10pt;
+    background-color: #000000;
+    color: white;
+    font-weight: bold;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    padding: 15px 34px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+button:hover, a:hover, a:active {
+    background-color: #464646;
+}
+
+button:focus {
+    outline:0;
+}
+
+input[type=text], input[type=number]{
+    font-size: 12pt;
+    border: 1px solid black;
+    padding: 3px;
+    width: 450px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+::placeholder {
+    color: #f5f5f5;
+    padding-left: 10px;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+#demographics_table {
+    padding:50px;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    border-spacing: 20px 10px;
+}
+
+#demographics_table label{
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 12pt;
+}
+
+#demographics_form td {
+    text-align: left;
+}
+
+#demographics_form td.label {
+    text-align: right;
+}
+
+p{
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 12pt;
+    text-align: justify;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#start{
+    height: 100%;
+    position: relative;
+}
+
+#start div{
+    opacity: 0;
+}
+/*
+#start button{
+    position: absolute;
+    margin-top: -100px;
+    margin-left: -50px;
+    top: 50%;
+}
+*/
+
+.text{
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-50%);
+}
+
+.button_wrapper{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.question_table {
+    text-align: center;
+    width: 600px;
+    border-collapse: collapse;
+    background-image: url(images/line.png);
+    background-repeat: no-repeat;
+    background-size: 85% 3%;
+    background-position: 50% 15%;
+    margin-top: 10px;
+}
+
+.question th {
+    background-image: url(images/line.png);
+}
+
+#questions .score_btn{
+    width: 18px;
+    height:18px;
+    cursor: pointer;
+    border:none;
+    background-size: cover;
+    background-color: transparent;
+    background-image: url(images/rb_01.png);
+    
+}
+
+#questions .score_label{
+    font-size: 0.7em;
+    width: 60px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    vertical-align: text-top;
+}
+
+#questions table button:hover {
+    background-image: url(images/rb_02.png);
+}
+
+.question_label {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+/*Answer labels*/
+#questions label{ 
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    text-align: center;
+    padding:4.5px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 20px;
+    height: 20px;
+
+}
+
+#answer_button{
+    margin-top: 20px; 
+/*    visibility :hidden;*/
+    
+}
+
+button:disabled,
+button[disabled]{
+    cursor: default;
+    background: grey;
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Experiment</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-database.js"></script>
+        <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    </head>
+    <body>
+        <div id="demographics" style="display:none">
+            <form id="demographics_form">
+                <div class="content">
+                    <!--        <button class="navigation_btn" onclick="testDatabase()">TEST DATABASE</button>-->
+                    <table id="demographics_table">
+                        <tr>
+                            <td class="label"><label for="age">AGE</label></td>
+                            <td><input type="number" min="0" max="100" id="age" placeholder="Numeric years of existence" required></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><label>GENDER</label></td>
+                            <td style="padding: 10px;">
+                                <input type="radio" name="gender" value="male" checked="checked"> <label>Male</label>
+                                &nbsp;&nbsp;&nbsp;
+                                <input type="radio" class="radio" name="gender" value="female"><label>Female</label>
+                                &nbsp;&nbsp;                    
+                                <input type="radio" class="radio" name="gender" value="other"> <label>Other</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label"><label for="etchnitity">ETHNICITY</label></td><td><input type="text" id="ethnicity" placeholder="Ethnic group of belonging" required></td>
+                        </tr>
+
+                        <tr>
+                            <td class="label"><label for="nationality">NATIONALITY</label></td>
+                            <td><input type="text" id="nationality" placeholder="Nation of belonging" required></td>                        
+                        </tr>
+
+                        <tr>
+                            <td class="label"><label for="education">EDUCATION</label></td>
+                            <td><input type="text" id="education" placeholder="Highest completed level and field of education" required></td>
+                        </tr>
+
+                        <tr>
+                            <td class="label"><label for="occupation">OCCUPATION</label></td>
+                            <td><input type="text" id="occupation" placeholder="Main activity of engagement" required></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <button class="navigation_btn" type="submit">NEXT</button>
+            </form>
+        </div>
+        <div id="instructions" style="display:none">
+            <div class="content">
+                <div class="text">
+                    <p>
+                        By different measures of certainty, this study will assess your willingness to accept the representation of a product with a given composition of properties. In a moment, you will be asked to make judgments about various products. On the screen, you will be shown an image of a product. You will then be asked to judge and rate the product in terms of surprise, ease-of-imagining, goodness-of-example, and similarity-to-an-ideal on a scale from 1-7. For example, for the product ‘house’ with the feature ‘has a roof’, you would be shown an image of a house that has a roof. Then, if asked to make a judgment about surprise you would be asked, “How surprised would you be to encounter a house that has a roof?” You would, then, respond by rating your level of surprise on a scale from 1-7.
+                    </p>
+                </div>
+            </div>
+            <button class="navigation_btn" onclick="showStart()">NEXT</button>
+        </div>
+
+        <div id="start" style="display:none">
+            <div class="content"></div>
+            <button class="navigation_btn" onclick="showQuestions()">START</button>
+        </div>
+
+        <div id="questions">
+            <div id="question_image" class="content"></div>
+            <p class="question_label" id="question1"/>
+            <table class="question_table" align="center">
+                <tr>
+                    <th><button class="score_btn" onclick="answer(this, 0, 1)"></button></th>
+                    <th><button class="score_btn" onclick="answer(this, 0, 2)"></button></th>
+                    <th><button class="score_btn" onclick="answer(this, 0, 3)"></button></th>
+                    <th><button class="score_btn" onclick="answer(this, 0, 4)"></button></th>
+                    <th><button class="score_btn" onclick="answer(this, 0, 5)"></button></th>
+                    <th><button class="score_btn"onclick="answer(this, 0, 6)"></button></th>
+                    <th><button class="score_btn"onclick="answer(this, 0, 7)"></button></th>
+                </tr>
+                <tr>
+                    <td><label class="score_label">Very unsurprised</label></td>
+                    <td><label class="score_label">Unsurprised</label></td>
+                    <td><label class="score_label">Slightly unsurprised</label></td>
+                    <td><label class="score_label">Neutral</label></td>
+                    <td><label class="score_label">Slightly surprised</label></td>
+                    <td><label class="score_label">Surprised</label></td>
+                    <td><label class="score_label">Very surprised</label></td>
+                </tr>
+            </table>
+
+            <br/>
+            <p class="question_label" id="question2"/>
+            <table class="question_table" align="center">
+                <tr>
+                    <th><button class="score_btn" onclick="answer(this, 1, 1)"></button></th>
+                    <th><button class="score_btn" onclick="answer(this, 1, 2)"></button></th>
+                    <th><button class="score_btn" onclick="answer(this, 1, 3)"></button></th>
+                    <th><button class="score_btn" onclick="answer(this, 1, 4)"></button></th>
+                    <th><button class="score_btn" onclick="answer(this, 1, 5)"></button></th>
+                    <th><button class="score_btn"onclick="answer(this, 1, 6)"></button></th>
+                    <th><button class="score_btn"onclick="answer(this, 1, 7)"></button></th>
+                </tr>
+                <tr>
+                    <td><label class="score_label">Very difficultly</label></td>
+                    <td><label class="score_label">Difficultly</label></td>
+                    <td><label class="score_label">Slightly difficultly</label></td>
+                    <td><label class="score_label">Neutral</label></td>
+                    <td><label class="score_label">Slightly easily</label></td>
+                    <td><label class="score_label">Easily</label></td>
+                    <td><label class="score_label">Very easily</label></td>
+                </tr>
+            </table>
+
+            <br/>
+            <p class="question_label" id="question3"/>
+            <table class="question_table" align="center">
+                <tr>
+                    <th><button class="score_btn" onclick="answer(this, 2, 1)"></button></th>
+                    <th><button class="score_btn" onclick="answer(this, 2, 2)"></button></th>
+                    <th><button class="score_btn" onclick="answer(this, 2, 3)"></button></th>
+                    <th><button class="score_btn" onclick="answer(this, 2, 4)"></button></th>
+                    <th><button class="score_btn" onclick="answer(this, 2, 5)"></button></th>
+                    <th><button class="score_btn"onclick="answer(this, 2, 6)"></button></th>
+                    <th><button class="score_btn"onclick="answer(this, 2, 7)"></button></th>
+                </tr>
+                <tr>
+                    <td><label class="score_label">Very poor</label></td>
+                    <td><label class="score_label">Poor</label></td>
+                    <td><label class="score_label">Slightly poor</label></td>
+                    <td><label class="score_label">Neutral</label></td>
+                    <td><label class="score_label">Slightly good</label></td>
+                    <td><label class="score_label">Good</label></td>
+                    <td><label class="score_label">Very good</label></td>
+                </tr>
+            </table>
+            
+            <br/>
+            <p class="question_label" id="question4"/>
+            <table class="question_table" align="center">
+                <tr>
+                    <th><button class="score_btn" onclick="answer(this, 3, 1)"></button></th>
+                    <th><button class="score_btn" onclick="answer(this, 3, 2)"></button></th>
+                    <th><button class="score_btn" onclick="answer(this, 3, 3)"></button></th>
+                    <th><button class="score_btn" onclick="answer(this, 3, 4)"></button></th>
+                    <th><button class="score_btn" onclick="answer(this, 3, 5)"></button></th>
+                    <th><button class="score_btn"onclick="answer(this, 3, 6)"></button></th>
+                    <th><button class="score_btn"onclick="answer(this, 3, 7)"></button></th>
+                </tr>
+                <tr>
+                    <td><label class="score_label">Very different</label></td>
+                    <td><label class="score_label">Different</label></td>
+                    <td><label class="score_label">Slightly different</label></td>
+                    <td><label class="score_label">Neutral</label></td>
+                    <td><label class="score_label">Slightly similar</label></td>
+                    <td><label class="score_label">Similar</label></td>
+                    <td><label class="score_label">Very similar</label></td>
+                </tr>
+            </table>
+            <br/>
+            <button disabled id="answer_button" class="navigation_btn" onclick="submitAnswers()">NEXT</button>
+        </div>
+
+        
+        
+        
+        
+        <div id="debrief" style="display:none">
+            <div class="content">
+                <div class="text">
+                    <p>
+                        Thank you for your participation in my study. Your participation is greatly appreciated.
+                    </p>
+                    <p>
+                        Please do not disclose the study purpose or procedure to anyone who has not participated in the study, as they might be participating in the future and their awareness of the study purpose or procedure could affect the results of the study.
+                    </p>
+                    <p>
+                        The researcher, Yen Mai Thi Trinh, will be glad to respond to any questions, concerns, suggestions, or complaints that you may have. You may contact her at: yen.m.t.trinh@ntnu.no.
+                    </p>
+                </div>
+            </div>
+            <button class="navigation_btn" onclick="showEnding()">NEXT</button>
+        </div>
+
+        <div id="ending" style="display:none">
+            <div class="content">
+                <h1>
+                    I hope to see you again.
+                </h1>
+            </div>
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+</html>
