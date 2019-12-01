@@ -178,6 +178,11 @@ p{
     background-image: url(images/rb_02.png);
 }
 
+#questions table button:disabled, 
+#questions table button[disabled]{
+    background-image: url(images/rb_02.png);
+}
+
 .question_label {
     text-align: center;
     margin-bottom: 0;
@@ -192,17 +197,16 @@ p{
     margin-right: 15px;
     width: 20px;
     height: 20px;
-
 }
 
 #answer_button{
     margin-top: 20px; 
 /*    visibility :hidden;*/
-    
 }
 
-button:disabled,
-button[disabled]{
+.navigation_btn:disabled, 
+.navigation_btn[disabled]{
     cursor: default;
     background: grey;
 }
+
