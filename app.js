@@ -172,7 +172,7 @@ function updateQuestion(){
     //console.log("Showing question " + order[index] + "(" + index + "): " + questions[order[index]]);
     if (currentButtons != null){
         for(var i = 0; i < currentButtons.length; i++){
-            currentButtons[i].style.backgroundImage = "url(images/rb_01.png)";
+            currentButtons[i].disabled = false;
         }
     }
     
@@ -194,13 +194,14 @@ function updateQuestion(){
 function answer(button, num, score) {
     //console.log(order[index]+" : "+ answers);
     if(currentButtons[num] != null){
-        currentButtons[num].style.backgroundImage = "url(images/rb_01.png)";
+        currentButtons[num].disabled = false;
     } else {
         answered++;
     }
     currentButtons[num] = button;
     currentAnswers[num] = score;
-    button.style.backgroundImage = "url(images/rb_02.png)";
+    button.disabled = true;
+    console.log("true")
     
     if(answered == 4){
 //        document.getElementById("answer_button").style.visibility = "visible";
