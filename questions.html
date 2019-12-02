@@ -8,7 +8,7 @@
         <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
     </head>
     <body>
-        <div id="demographics" style="display:none">
+        <div id="demographics">
             <form id="demographics_form">
                 <div class="content">
                     <!--        <button class="navigation_btn" onclick="testDatabase()">TEST DATABASE</button>-->
@@ -55,7 +55,10 @@
             <div class="content">
                 <div class="text">
                     <p>
-                        By different measures of certainty, this study will assess your willingness to accept the representation of a product with a given composition of properties. In a moment, you will be asked to make judgments about various products. On the screen, you will be shown an image of a product. You will then be asked to judge and rate the product in terms of surprise, ease-of-imagining, goodness-of-example, and similarity-to-an-ideal on a scale from 1-7. For example, for the product ‘house’ with the feature ‘has a roof’, you would be shown an image of a house that has a roof. Then, if asked to make a judgment about surprise you would be asked, “How surprised would you be to encounter a house that has a roof?” You would, then, respond by rating your level of surprise on a scale from 1-7.
+                        By different measures of certainty, this study will assess your willingness to accept the representation of a product. In a moment, you will be asked to make judgments about various products. On the screen, you will be shown an image of a product with a particular property, by a particular brand, and in a particular context. You will then be asked to judge and rate the product in terms of surprise, ease-of-imagining, goodness-of-example, and similarity-to-an-ideal on a scale from 1 to 7.
+<br>
+<br>
+For example, for the product 'suitcase' with the property 'has a zipper,' by the brand 'Samsonite,' and in the context 'at an airport,' you would be shown an image of a suitcase that has a zipper, with a Samsonite brand logo, at an airport. Then, when asked to make a judgment about surprise you would be asked, "How surprised are you to encounter an actual suitcase with a zipper by Samsonite at the airport?" You would then respond by rating your level of surprise on a scale from 1 to 7, where 1 is 'very unsurprised' and 7 is 'very surprised', according to how surprised you are.
                     </p>
                 </div>
             </div>
@@ -67,7 +70,7 @@
             <button class="navigation_btn" onclick="showQuestions()">START</button>
         </div>
 
-        <div id="questions">
+        <div id="questions" style="display:none">
             <div id="question_image" class="content"></div>
             <p class="question_label" id="question1"/>
             <table class="question_table" align="center">
@@ -187,7 +190,7 @@
         <div id="ending" style="display:none">
             <div class="content">
                 <h1>
-                    I hope to see you again.
+                    Thank you.
                 </h1>
             </div>
         </div>
