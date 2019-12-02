@@ -210,7 +210,7 @@ function answer(button, num, score) {
 }
 
 function submitAnswers(){
-    answers[index] = currentAnswers;
+    answers[order[index]] = currentAnswers;
     index++;
     if(index < images.length) {
         updateQuestion();
