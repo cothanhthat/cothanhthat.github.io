@@ -51,22 +51,22 @@ var question_imagine = [
 	"How easily can you imagine an actual fridge with doors by Kodak in a forest?",
 	"How easily can you imagine an actual fridge with wings by Kodak in a forest?"];
 var question_example = [
-	"How good an example of bike do you consider an actual bike with wheels by TREK on a street?",
-	"How good an example of bike do you consider an actual bike with blades by TREK on a street?",
-	"How good an example of bike do you consider an actual bike with wheels by Disney on a street?",
-	"How good an example of bike do you consider an actual bike with wheels by TREK on a bed?",
-	"How good an example of bike do you consider an actual bike with blades by Disney on a street?",
-	"How good an example of bike do you consider an actual bike with blades by TREK on a bed?",
-	"How good an example of bike do you consider an actual bike with wheels by Disney on a bed?",
-	"How good an example of bike do you consider an actual bike with blades by Disney on a bed?",
-	"How good an example of fridge do you consider an actual fridge with doors by AEG in a kitchen?",
-	"How good an example of fridge do you consider an actual fridge with wings by AEG in a kitchen?",
-	"How good an example of fridge do you consider an actual fridge with doors by Kodak in a kitchen?",
-	"How good an example of fridge do you consider an actual fridge with doors by AEG in a forest?",
-	"How good an example of fridge do you consider an actual fridge with wings by Kodak in a kitchen?",
-	"How good an example of fridge do you consider an actual fridge with wings by AEG in a forest?",
-	"How good an example of fridge do you consider an actual fridge with doors by Kodak in a forest?",
-	"How good an example of fridge do you consider an actual fridge with wings by Kodak in a forest?"];
+	"How good an example of a bike do you consider an actual bike with wheels by TREK on a street?",
+	"How good an example of a bike do you consider an actual bike with blades by TREK on a street?",
+	"How good an example of a bike do you consider an actual bike with wheels by Disney on a street?",
+	"How good an example of a bike do you consider an actual bike with wheels by TREK on a bed?",
+	"How good an example of a bike do you consider an actual bike with blades by Disney on a street?",
+	"How good an example of a bike do you consider an actual bike with blades by TREK on a bed?",
+	"How good an example of a bike do you consider an actual bike with wheels by Disney on a bed?",
+	"How good an example of a bike do you consider an actual bike with blades by Disney on a bed?",
+	"How good an example of a fridge do you consider an actual fridge with doors by AEG in a kitchen?",
+	"How good an example of a fridge do you consider an actual fridge with wings by AEG in a kitchen?",
+	"How good an example of a fridge do you consider an actual fridge with doors by Kodak in a kitchen?",
+	"How good an example of a fridge do you consider an actual fridge with doors by AEG in a forest?",
+	"How good an example of a fridge do you consider an actual fridge with wings by Kodak in a kitchen?",
+	"How good an example of a fridge do you consider an actual fridge with wings by AEG in a forest?",
+	"How good an example of a fridge do you consider an actual fridge with doors by Kodak in a forest?",
+	"How good an example of a fridge do you consider an actual fridge with wings by Kodak in a forest?"];
 
 var question_ideal = [
 	"How similar is an actual bike with wheels by TREK on a street to an ideal bike?",
@@ -80,11 +80,11 @@ var question_ideal = [
 	"How similar is an actual fridge with doors by AEG in a kitchen to an ideal fridge?",
 	"How similar is an actual fridge with wings by AEG in a kitchen to an ideal fridge?",
 	"How similar is an actual fridge with doors by Kodak in a kitchen to an ideal fridge?",
-	"How similar is an actual fridge with doors by AEG in a kitchen to an ideal forest?",
+	"How similar is an actual fridge with doors by AEG in a forest to an ideal fridge?",
 	"How similar is an actual fridge with wings by Kodak in a kitchen to an ideal fridge?",
-	"How similar is an actual fridge with wings by AEG in a kitchen to an ideal forest?",
-	"How similar is an actual fridge with doors by Kodak in a kitchen to an ideal forest?",
-	"How similar is an actual fridge with wings by Kodak in a kitchen to an ideal forest?"];
+	"How similar is an actual fridge with wings by AEG in a forest to an ideal fridge?",
+	"How similar is an actual fridge with doors by Kodak in a forest to an ideal fridge?",
+	"How similar is an actual fridge with wings by Kodak in a forest to an ideal fridge?"];
 
 
 
