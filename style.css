@@ -75,7 +75,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 ::placeholder {
-    color: #cccccc;
+    color: #bbbbbb;
     padding-left: 3px;
 }
 
