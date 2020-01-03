@@ -86,12 +86,9 @@ var question_ideal = [
 	"How similar is an actual fridge with doors by Kodak in a forest to an ideal fridge?",
 	"How similar is an actual fridge with wings by Kodak in a forest to an ideal fridge?"];
 
-
-
 var index = 0;
 
 (function(){
-    // Your web app's Firebase configuration
     var config = {
         apiKey: "AIzaSyCGxeeURfi-mMXDNzCm3dxgBK9j-uj_WU8",
     authDomain: "cothanhthat.firebaseapp.com",
@@ -102,12 +99,8 @@ var index = 0;
     appId: "1:99919601515:web:0b5b33a98162e5753d762e"
     };
 
-    // Initialize Firebase
     firebase.initializeApp(config);
-    //const preObject = document.getElementById('object');
-    //const dbRefObject = firebase.database().ref().child('object');
 
-    //dbRefObject.on('value', snap => console.log(snap.val()));
     createOrder();
     order = shuffle(order);
     updateQuestion();
@@ -218,7 +211,7 @@ function submitAnswers(){
         firebase.database().ref(key).update({
             results: answers
         });
-        showDebrief();
+        updateDisplay("mid");
     }
 }
 
@@ -240,31 +233,19 @@ function submit() {
     });
 };
 
+
+
 $('#demographics_form').submit(function(e) {
     e.preventDefault();
     submit();
-    document.getElementById("demographics_form").style.display = "none";
-    document.getElementById("instructions").style.display = "block";
+    updateDisplay("debrief");
 });
 
-function showStart(){
-    document.getElementById("instructions").style.display = "none";
-    document.getElementById("start").style.display = "block";
-}
-
-function showQuestions(){
-    document.getElementById("start").style.display = "none";
-    document.getElementById("questions").style.display = "block";
-}
-
-function showDebrief(){
-    document.getElementById("questions").style.display = "none";
-    document.getElementById("debrief").style.display = "block";
-}
-
-function showEnding(){
-    document.getElementById("debrief").style.display = "none";
-    document.getElementById("ending").style.display = "block";
+var displayed = "instructions";
+function updateDisplay(newDisp){
+    document.getElementById(displayed).style.display = "none";
+    displayed = newDisp;
+    document.getElementById(displayed).style.display = "block";   
 }
 
 //function testDatabase(){

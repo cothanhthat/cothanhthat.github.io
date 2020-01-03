@@ -8,50 +8,7 @@
         <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
     </head>
     <body>
-        <div id="demographics">
-            <form id="demographics_form">
-                <div class="content">
-                    <!--        <button class="navigation_btn" onclick="testDatabase()">TEST DATABASE</button>-->
-                    <table id="demographics_table">
-                        <tr>
-                            <td class="label"><label for="age">AGE</label></td>
-                            <td><input type="number" min="0" max="100" id="age" placeholder="Numeric years of existence" required></td>
-                        </tr>
-                        <tr>
-                            <td class="label"><label>GENDER</label></td>
-                            <td style="padding: 10px;">
-                                <input type="radio" name="gender" value="male" checked="checked"> <label>Male</label>
-                                &nbsp;&nbsp;&nbsp;
-                                <input type="radio" class="radio" name="gender" value="female"><label>Female</label>
-                                &nbsp;&nbsp;                    
-                                <input type="radio" class="radio" name="gender" value="other"> <label>Other</label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="label"><label for="ethnicity">ETHNICITY</label></td><td><input type="text" id="ethnicity" placeholder="Ethnic group of belonging (e.g., Danish, Chinese-American)" required></td>
-                        </tr>
-
-                        <tr>
-                            <td class="label"><label for="nationality">NATIONALITY</label></td>
-                            <td><input type="text" id="nationality" placeholder="Nation of belonging (e.g., Danish, British)" required></td>                        
-                        </tr>
-
-                        <tr>
-                            <td class="label"><label for="education">EDUCATION</label></td>
-                            <td><input type="text" id="education" placeholder="Highest attended level and field of education (e.g., MSc in Food Technology)" required></td>
-                        </tr>
-
-                        <tr>
-                            <td class="label"><label for="occupation">OCCUPATION</label></td>
-                            <td><input type="text" id="occupation" placeholder="Main activity of engagement (e.g., student, doctor)" required></td>
-                        </tr>
-                    </table>
-                </div>
-
-                <button class="navigation_btn" type="submit">NEXT</button>
-            </form>
-        </div>
-        <div id="instructions" style="display:none">
+        <div id="instructions">
             <div class="content">
                 <div class="text">
                     <p>
@@ -62,12 +19,12 @@ For example, for the product 'suitcase' with the property 'has a zipper,' by the
                     </p>
                 </div>
             </div>
-            <button class="navigation_btn" onclick="showStart()">NEXT</button>
+            <button class="navigation_btn" onclick="updateDisplay('start')">NEXT</button>
         </div>
 
         <div id="start" style="display:none">
             <div class="content"></div>
-            <button class="navigation_btn" onclick="showQuestions()">START</button>
+            <button class="navigation_btn" onclick="updateDisplay('questions')">START</button>
         </div>
 
         <div id="questions" style="display:none">
@@ -167,6 +124,61 @@ For example, for the product 'suitcase' with the property 'has a zipper,' by the
         </div>
 
         
+        <div id="mid" style="display:none">
+            <div class="content">
+                <div class="text">
+                    <p>
+                        Content
+                    </p>
+                </div>
+            </div>
+            <button class="navigation_btn" onclick="updateDisplay('demographics')">NEXT</button>
+        </div>
+        
+        
+        <div id="demographics" style="display:none">
+            <form id="demographics_form">
+                <div class="content">
+                    <!--        <button class="navigation_btn" onclick="testDatabase()">TEST DATABASE</button>-->
+                    <table id="demographics_table">
+                        <tr>
+                            <td class="label"><label for="age">AGE</label></td>
+                            <td><input type="number" min="0" max="100" id="age" placeholder="Numeric years of existence" required></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><label>GENDER</label></td>
+                            <td style="padding: 10px;">
+                                <input type="radio" name="gender" value="male" checked="checked"> <label>Male</label>
+                                &nbsp;&nbsp;&nbsp;
+                                <input type="radio" class="radio" name="gender" value="female"><label>Female</label>
+                                &nbsp;&nbsp;                    
+                                <input type="radio" class="radio" name="gender" value="other"> <label>Other</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label"><label for="ethnicity">ETHNICITY</label></td><td><input type="text" id="ethnicity" placeholder="Ethnic group of belonging (e.g., Danish, Chinese-American)" required></td>
+                        </tr>
+
+                        <tr>
+                            <td class="label"><label for="nationality">NATIONALITY</label></td>
+                            <td><input type="text" id="nationality" placeholder="Nation of belonging (e.g., Danish, British)" required></td>                        
+                        </tr>
+
+                        <tr>
+                            <td class="label"><label for="education">EDUCATION</label></td>
+                            <td><input type="text" id="education" placeholder="Highest attended level and field of education (e.g., MSc in Food Technology)" required></td>
+                        </tr>
+
+                        <tr>
+                            <td class="label"><label for="occupation">OCCUPATION</label></td>
+                            <td><input type="text" id="occupation" placeholder="Main activity of engagement (e.g., student, doctor)" required></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <button class="navigation_btn" type="submit">NEXT</button>
+            </form>
+        </div>
         
         
         
@@ -184,7 +196,7 @@ For example, for the product 'suitcase' with the property 'has a zipper,' by the
                     </p>
                 </div>
             </div>
-            <button class="navigation_btn" onclick="showEnding()">NEXT</button>
+            <button class="navigation_btn" onclick="updateDisplay('ending')">NEXT</button>
         </div>
 
         <div id="ending" style="display:none">
