@@ -12,6 +12,14 @@ body {
     text-align: center;
 }
 
+#start .navigation_btn {
+    margin: 0;
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
 .content{
     width: 680px;
     height: 515px;
@@ -122,10 +130,10 @@ p{
 }
 /*
 #start button{
-    position: absolute;
-    margin-top: -100px;
-    margin-left: -50px;
-    top: 50%;
+position: absolute;
+margin-top: -100px;
+margin-left: -50px;
+top: 50%;
 }
 */
 
@@ -164,7 +172,7 @@ p{
     background-color: transparent;
     background-image: url(images/rb_01.png);
     margin-top: -3px;
-    
+
 }
 
 #questions .score_label{
@@ -203,7 +211,7 @@ p{
 
 #answer_button{
     margin-top: 20px; 
-/*    visibility :hidden;*/
+    /*    visibility :hidden;*/
 }
 
 .navigation_btn:disabled, 
