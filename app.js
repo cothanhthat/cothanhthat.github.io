@@ -202,6 +202,13 @@ function answer(button, num, score) {
     }
 }
 
+function startQuestions(){
+    firebase.database().ref(key).update({
+        "status": 'started'
+    })
+    updateDisplay('start');
+}
+
 function submitAnswers(){
     answers[order[index]] = currentAnswers;
     index++;
@@ -229,7 +236,8 @@ function submit() {
         "ethnicity": ethnicity,
         "nationality": nationality,
         "education": education,
-        "occupation": occupation
+        "occupation": occupation,
+        "status": null
     });
 };
 
